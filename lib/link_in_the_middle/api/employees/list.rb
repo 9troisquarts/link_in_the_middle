@@ -1,0 +1,97 @@
+require 'link_in_the_middle/api/client'
+
+module LinkInTheMiddle
+  module Api
+    module Employees
+      EMPLOYEES_QUERY = LinkInTheMiddle::Client.parse <<-'GRAPHQL'
+        query($search: EmployeesSearchAttributes, $unique_employee_ids: [String!], $c_b_bonus_user_email: String, $page: Int, $per_page: Int) {
+          employeesPaginated(search: $search, uniqueEmployeeIds: $unique_employee_ids, cBBonusUserEmail: $c_b_bonus_user_email, page: $page, perPage: $per_page) {
+            employees {
+              id
+              uniqueEmployeeId
+              firstname
+              lastname
+              email
+              nationalityIso
+              arrivalOn
+              url
+              cbBonusUsers {
+                fullname
+                email
+              }
+              currentAssignment {
+                jobTitle
+                startDate
+                endDate
+                internationalStatus
+                leadershipTeam
+                jobFamily {
+                  title
+                }
+                subJobFamily {
+                  title
+                }
+                contractLegalEntity {
+                  title
+                  countryIso
+                }
+                workingPlaceLegalEntity {
+                  title
+                  countryIso
+                }
+                businessUnit {
+                  title
+                }
+                contractType {
+                  title
+                }
+                manager {
+                  fullname
+                  email
+                }
+                hrOrg {
+                  fullname
+                  email
+                  currentAssignment {
+                    manager {
+                      fullname
+                    }
+                  }
+                }
+                upperManager {
+                  fullname
+                  email
+                }
+              }            
+            }
+            pagination {
+              page
+              perPage
+              total
+              totalPage
+            }
+          }
+        }
+      GRAPHQL
+
+      class List
+        def self.call(search_params: {}, page: nil, per_page: nil, unique_employee_ids: nil)
+          result = LinkInTheMiddle::Client.query(
+            LinkInTheMiddle::Api::Employees::EMPLOYEES_QUERY,
+            variables: {
+              search: search_params && search_params.deep_transform_keys! { |key| key.camelize(:lower) },
+              # c_b_bonus_user_email: user_email,
+              unique_employee_ids: unique_employee_ids,
+              page: page,
+              per_page: per_page
+            }
+          )
+          {
+            records: result&.data&.employees_paginated&.employees.to_a,
+            pagination: result&.data&.employees_paginated&.pagination
+          }
+        end
+      end
+    end
+  end
+end
