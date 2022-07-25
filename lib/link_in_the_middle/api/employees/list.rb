@@ -4,7 +4,7 @@ module LinkInTheMiddle
   module Api
     module Employees
       EMPLOYEES_QUERY = LinkInTheMiddle::Client.parse <<-'GRAPHQL'
-        query($search: EmployeesSearchAttributes, $unique_employee_ids: [String!], $c_b_bonus_user_email: String, $page: Int, $per_page: Int) {
+        query($become_user_token: String, $scope: String, $search: EmployeesSearchAttributes, $unique_employee_ids: [String!], $page: Int, $per_page: Int) {
           employeesPaginated(search: $search, uniqueEmployeeIds: $unique_employee_ids, cBBonusUserEmail: $c_b_bonus_user_email, page: $page, perPage: $per_page) {
             employees {
               id
@@ -75,12 +75,13 @@ module LinkInTheMiddle
       GRAPHQL
 
       class List
-        def self.call(search_params: {}, page: nil, per_page: nil, unique_employee_ids: nil)
+        def self.call(become_user_token: nil, scope: nil, search_params: {}, page: nil, per_page: nil, unique_employee_ids: nil)
           result = LinkInTheMiddle::Client.query(
             LinkInTheMiddle::Api::Employees::EMPLOYEES_QUERY,
             variables: {
+              become_user_token: become_user_token,
+              scope: scope,
               search: search_params && search_params.deep_transform_keys! { |key| key.camelize(:lower) },
-              # c_b_bonus_user_email: user_email,
               unique_employee_ids: unique_employee_ids,
               page: page,
               per_page: per_page

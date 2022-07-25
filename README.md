@@ -2,8 +2,6 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/link_in_the_middle`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -21,6 +19,23 @@ Or install it yourself as:
     $ gem install link_in_the_middle
 
 ## Usage
+### Get become user secret token
+```ruby
+data = LinkInTheMiddle::Users::Become.perform(
+    email: "email@mail.com"
+)
+=> "9e2b20fe-8c42-4f26-aac5-75275dcb8615"
+```
+### Find an employee by email:
+```ruby
+LinkInTheMiddle::Employees::Find.perform(
+    search_params: {
+        email: "email@mail.com"
+    }
+)
+=> {:record=>#< id="13" uniqueEmployeeId="L000133" firstname="Neuf" lastname="Troisquarts" isManager=true isHrOrg=true email="email@mail.com">}
+```
+## Configuration
 
 Configure link graphql api endpoint and auth token
 
@@ -30,20 +45,6 @@ LinkInTheMiddle.configure do |config|
   config.api_token = <your-token>
   config.link_graphql_api_endpoint = "https://..."
 end
-```
-
-## Examples
-
-### 1: Find an employee by email:
-```ruby
-data = LinkInTheMiddle::Employees::Find.perform(
-    search_params: {
-        email: "email@lesaffre.com"
-    }
-)
-
-result = data[:record]
-=> {:record=>#< id="13" uniqueEmployeeId="L000133" firstname="Neuf" lastname="Troisquarts" isManager=true isHrOrg=true email="linktest@lesaffre.com">}
 ```
 ## Development
 
