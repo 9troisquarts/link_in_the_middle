@@ -4,7 +4,7 @@ module LinkInTheMiddle
   module Api
     module Employees
       FIND_EMPLOYEE_QUERY = LinkInTheMiddle::Client.parse <<-'GRAPHQL'
-        query($search: EmployeesSearchAttributes) {
+        query($become_user_token: String, $scope: String, $search: EmployeesSearchAttributes) {
           employeesPaginated(search: $search) {
             employees {
               id
@@ -70,10 +70,12 @@ module LinkInTheMiddle
       GRAPHQL
 
       class Find
-        def self.call(search_params: {})
+        def self.call(become_user_token: nil, scope: nil, search_params: {})
           result = LinkInTheMiddle::Client.query(
             LinkInTheMiddle::Api::Employees::FIND_EMPLOYEE_QUERY,
             variables: {
+              become_user_token: become_user_token,
+              scope: scope,
               search: search_params && search_params.deep_transform_keys! { |key| key.to_s.camelize(:lower) },
             }
           )
