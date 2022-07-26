@@ -5,7 +5,7 @@ module LinkInTheMiddle
     module Employees
       FIND_EMPLOYEE_QUERY = LinkInTheMiddle::Client.parse <<-'GRAPHQL'
         query($become_user_token: String, $scope: String, $search: EmployeesSearchAttributes) {
-          employeesPaginated(search: $search) {
+          employeesPaginated(becomeUserToken: $become_user_token, scope: $scope, search: $search) {
             employees {
               id
               uniqueEmployeeId
