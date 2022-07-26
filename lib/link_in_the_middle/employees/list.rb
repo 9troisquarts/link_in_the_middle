@@ -11,7 +11,7 @@ module LinkInTheMiddle
 
         search_params['leadership_team'] = true if search_params['leadership_team'] == 'true'
         search_params['leadership_team'] = false if search_params['leadership_team'] == 'false'
-        # search_params['status'] = 'ACTIVE'
+        search_params['status'] = 'ACTIVE'
         result = LinkInTheMiddle::Api::Employees::List.call(
           become_user_token: become_user_token,
           scope: scope,

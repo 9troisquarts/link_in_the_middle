@@ -21,6 +21,8 @@ Or install it yourself as:
 ## Usage
 ### Get become user secret token
 ```ruby
+require 'link_in_the_middle/users/become'
+
 data = LinkInTheMiddle::Users::Become.perform(
     email: "email@mail.com"
 )
@@ -28,6 +30,8 @@ data = LinkInTheMiddle::Users::Become.perform(
 ```
 ### Find an employee by email:
 ```ruby
+require 'link_in_the_middle/employees/find'
+
 LinkInTheMiddle::Employees::Find.perform(
     search_params: {
         email: "email@mail.com"
