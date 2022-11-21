@@ -1,3 +1,7 @@
+## [0.3.1] - 2022-07-26
+
+- Fix employees find when employee is not existing
+
 ## [0.3.0] - 2022-07-26
 
 - Add search api for job families, business units and legal entities

@@ -80,7 +80,7 @@ module LinkInTheMiddle
             }
           )
           {
-            record: result&.data&.employees_paginated&.employees.first,
+            record: result&.data&.employees_paginated&.employees&.first,
           }
         end
       end
