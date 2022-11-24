@@ -20,6 +20,10 @@ module LinkInTheMiddle
               gender
               teamSize
               birthdate
+              cbBonusUsers {
+                fullname
+                email
+              }
               currentAssignment {
                 jobTitle
                 startDate

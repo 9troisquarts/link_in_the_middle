@@ -1,6 +1,10 @@
-## [0.3.1] - 2022-07-26
+## [0.3.2] - 2022-11-24
 
-- Fix employees find when employee is not existing
+- Add Cb bonus users to employees#find
+
+## [0.3.1] - 2022-11-21
+
+- Fix employees#find when employee is not found
 
 ## [0.3.0] - 2022-07-26
 
