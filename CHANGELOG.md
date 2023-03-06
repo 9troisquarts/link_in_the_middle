@@ -1,3 +1,7 @@
+## [0.4.0] - 2023-02-01
+
+- Add user_token parameter
+
 ## [0.3.2] - 2022-11-24
 
 - Add Cb bonus users to employees#find

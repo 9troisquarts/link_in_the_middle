@@ -4,11 +4,12 @@ require "graphql/client/http"
 module LinkInTheMiddle
   HTTP = GraphQL::Client::HTTP.new(LinkInTheMiddle.config.link_graphql_api_endpoint) do
     def headers(context)
-      { "token" => LinkInTheMiddle.config.api_token }
+      { 
+        "token" => LinkInTheMiddle.config.api_token,
+        "user-token" => LinkInTheMiddle.config.api_user_token
+      }
     end
   end
-
-  
 
   if Rails.env.development?
     # always update schema for dev env
