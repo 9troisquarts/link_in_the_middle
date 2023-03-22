@@ -5,8 +5,7 @@ module LinkInTheMiddle
   HTTP = GraphQL::Client::HTTP.new(LinkInTheMiddle.config.link_graphql_api_endpoint) do
     def headers(context)
       { 
-        "token" => LinkInTheMiddle.config.api_token,
-        "user-token" => LinkInTheMiddle.config.api_user_token
+        "token" => LinkInTheMiddle.config.api_token
       }
     end
   end

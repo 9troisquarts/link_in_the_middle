@@ -1,3 +1,7 @@
+## [0.5.0] - 2023-03-22
+
+- Remove user_token parameter
+
 ## [0.4.0] - 2023-02-01
 
 - Add user_token parameter

@@ -47,7 +47,6 @@ Configure link graphql api endpoint and auth token
 # initializers/link_in_the_middle.rb
 LinkInTheMiddle.configure do |config|
   config.api_token = <your-token>
-  config.api_user_token = <your-api-user-token>
   config.link_graphql_api_endpoint = "https://..."
 end
 ```
