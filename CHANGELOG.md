@@ -1,3 +1,7 @@
+## [0.6.0] - 2023-11-23
+
+- Add international_job_title for current_assignment
+
 ## [0.5.0] - 2023-03-22
 
 - Remove user_token parameter

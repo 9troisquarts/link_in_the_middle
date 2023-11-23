@@ -26,6 +26,7 @@ module LinkInTheMiddle
               }
               currentAssignment {
                 jobTitle
+                internationalJobTitle
                 startDate
                 endDate
                 internationalStatus
