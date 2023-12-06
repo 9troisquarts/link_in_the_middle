@@ -28,6 +28,49 @@ data = LinkInTheMiddle::Users::Become.perform(
 )
 => "9e2b20fe-8c42-4f26-aac5-75275dcb8615"
 ```
+
+
+### Get list of Legal Entities:
+```ruby
+require 'link_in_the_middle/legal_entities/search'
+
+LinkInTheMiddle::LegalEntities::Search.perform(
+    search: "lesaffre int"
+)
+=> {:records=>[#< id="3" title="Lesaffre International">, #< id="14" title="Lesaffre International Corporation">]}
+```
+
+### Get list of Region/BU/Corp functions:
+```ruby
+require 'link_in_the_middle/business_units/search'
+
+LinkInTheMiddle::BusinessUnits::Search.perform(
+    search: "agrauxine"
+)
+=> {:records=>[#< id="1" title="Agrauxine">]}
+```
+
+### Get list of Job Families:
+```ruby
+require 'link_in_the_middle/job_families/search'
+
+LinkInTheMiddle::JobFamilies::Search.perform(
+    search: "communication"
+)
+=> {:records=>[#< id="1" title="Communication" subJobFamilies=...>]}
+```
+
+### Get list of Sub Job Families:
+```ruby
+require 'link_in_the_middle/sub_job_families/search'
+
+LinkInTheMiddle::SubJobFamilies::Search.perform(
+    search: "accounting",
+    job_family_id: 1
+)
+=> {:records=>[#< id="1" title="Accounting" jobFamily=...>]}
+```
+
 ### Find an employee by email:
 ```ruby
 require 'link_in_the_middle/employees/find'
