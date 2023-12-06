@@ -1,3 +1,7 @@
+## [0.6.0] - 2023-12-06
+
+- Add csrd_business_unit to legal entities
+
 ## [0.6.0] - 2023-11-23
 
 - Add international_job_title for current_assignment

@@ -8,6 +8,10 @@ module LinkInTheMiddle
           jobFamilies(search: $search) {
             id
             title
+            subJobFamilies {
+              id
+              title
+            }
           }
         }
       GRAPHQL

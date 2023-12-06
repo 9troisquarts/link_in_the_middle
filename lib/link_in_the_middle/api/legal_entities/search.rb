@@ -8,6 +8,10 @@ module LinkInTheMiddle
           legalEntities(search: $search) {
             id
             title
+            csrdBusinessUnit {
+              id
+              title
+            }
           }
         }
       GRAPHQL
