@@ -1,4 +1,8 @@
-## [0.6.0] - 2023-12-06
+## [0.8.0] - 2024-02-15
+
+- Add api for peso bandings
+
+## [0.7.0] - 2023-12-06
 
 - Add csrd_business_unit to legal entities
 

@@ -71,6 +71,14 @@ LinkInTheMiddle::SubJobFamilies::Search.perform(
 => {:records=>[#< id="1" title="Accounting" jobFamily=...>]}
 ```
 
+### Get list of Peso Bandings:
+```ruby
+require 'link_in_the_middle/peso_bandings/list'
+
+LinkInTheMiddle::PesoBandings::List.perform
+=> {:records=>[#< banding="A" subBandings=...>, #< banding="B" subBandings=...>, #< banding="C" subBandings=...>, #< banding="D" subBandings=...>, #< banding="E" subBandings=...>]}
+```
+
 ### Find an employee by email:
 ```ruby
 require 'link_in_the_middle/employees/find'
