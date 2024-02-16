@@ -1,3 +1,7 @@
+## [0.9.0] - 2024-02-16
+
+- Add api for training topics
+
 ## [0.8.0] - 2024-02-15
 
 - Add api for peso bandings

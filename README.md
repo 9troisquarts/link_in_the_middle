@@ -79,6 +79,16 @@ LinkInTheMiddle::PesoBandings::List.perform
 => {:records=>[#< banding="A" subBandings=...>, #< banding="B" subBandings=...>, #< banding="C" subBandings=...>, #< banding="D" subBandings=...>, #< banding="E" subBandings=...>]}
 ```
 
+### Get list of Training Topics:
+```ruby
+require 'link_in_the_middle/training_topics/search'
+
+LinkInTheMiddle::TrainingTopics::Search.perform(
+    search: "example"
+)
+=> {:records=>[#< id="1" title="example">]}
+```
+
 ### Find an employee by email:
 ```ruby
 require 'link_in_the_middle/employees/find'
