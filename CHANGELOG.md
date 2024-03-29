@@ -1,3 +1,7 @@
+## [0.10.0] - 2024-03-29
+
+- Add training session start date and end date
+
 ## [0.9.0] - 2024-02-16
 
 - Add api for training topics

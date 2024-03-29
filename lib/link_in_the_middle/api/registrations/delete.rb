@@ -13,6 +13,8 @@ module LinkInTheMiddle
               employeeId
               training
               trainingSession
+              trainingSessionStartDate
+              trainingSessionEndDate
               status
             }
             errors
