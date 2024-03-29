@@ -109,6 +109,7 @@ Configure link graphql api endpoint and auth token
 LinkInTheMiddle.configure do |config|
   config.api_token = <your-token>
   config.link_graphql_api_endpoint = "https://..."
+  config.update_schema_on_each_request = false # trigger GraphQL::Client.dump_schema for each request
 end
 ```
 ## Development

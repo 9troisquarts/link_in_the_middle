@@ -2,8 +2,6 @@ require "graphql/client"
 require "graphql/client/http"
 
 module LinkInTheMiddle
-  return if LinkInTheMiddle.config.link_graphql_api_endpoint.blank? || LinkInTheMiddle.config.api_token.blank?
-
   HTTP = GraphQL::Client::HTTP.new(LinkInTheMiddle.config.link_graphql_api_endpoint) do
     def headers(context)
       { 
@@ -12,8 +10,7 @@ module LinkInTheMiddle
     end
   end
 
-  if Rails.env.development?
-    # always update schema for dev env
+  if LinkInTheMiddle.config.update_schema_on_each_request
     GraphQL::Client.dump_schema(LinkInTheMiddle::HTTP, "schema.json")
   end
 
