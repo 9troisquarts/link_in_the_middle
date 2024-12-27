@@ -1,3 +1,6 @@
+## [0.12.0] - 2024-12-27
+- Added attributes to manager, hr org and upper manager
+
 ## [0.11.0] - 2024-03-29
 - The schema will not be updated automatically on each request in development env anymore. New config for schema dump: `update_schema_on_each_request`. By default false. Legacy value is `Rails.env.development?`.
 

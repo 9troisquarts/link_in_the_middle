@@ -38,10 +38,12 @@ module LinkInTheMiddle
                   title
                 }
                 contractLegalEntity {
+                  id
                   title
                   countryIso
                 }
                 workingPlaceLegalEntity {
+                  id
                   title
                   countryIso
                 }
@@ -52,10 +54,18 @@ module LinkInTheMiddle
                   title
                 }
                 manager {
+                  id
+                  uniqueEmployeeId
+                  firstname
+                  lastname
                   fullname
                   email
                 }
                 hrOrg {
+                  id
+                  uniqueEmployeeId
+                  firstname
+                  lastname
                   fullname
                   email
                   currentAssignment {
@@ -65,6 +75,9 @@ module LinkInTheMiddle
                   }
                 }
                 upperManager {
+                  unique_employee_id
+                  firstname
+                  lastname
                   fullname
                   email
                 }
