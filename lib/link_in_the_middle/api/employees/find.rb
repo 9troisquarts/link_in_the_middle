@@ -75,7 +75,7 @@ module LinkInTheMiddle
                   }
                 }
                 upperManager {
-                  unique_employee_id
+                  uniqueEmployeeId
                   firstname
                   lastname
                   fullname

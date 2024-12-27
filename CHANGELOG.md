@@ -1,3 +1,6 @@
+## [0.12.1] - 2024-12-27
+- Fix unique_employee_id for upper manager
+
 ## [0.12.0] - 2024-12-27
 - Added attributes to manager, hr org and upper manager
 
