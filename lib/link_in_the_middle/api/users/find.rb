@@ -11,6 +11,10 @@ module LinkInTheMiddle
               email
               firstname
               lastname
+              legalEntitiesAsTrainingSteward {
+                id
+                title
+              }
             }
           }
         }

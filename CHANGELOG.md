@@ -1,3 +1,6 @@
+## [0.13.0] - 2025-01-30
+- Add training stewards to users
+
 ## [0.12.1] - 2024-12-27
 - Fix unique_employee_id for upper manager
 
