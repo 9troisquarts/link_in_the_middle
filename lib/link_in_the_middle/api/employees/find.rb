@@ -24,6 +24,10 @@ module LinkInTheMiddle
                 fullname
                 email
               }
+              cbBonusUpdators {
+                fullname
+                email
+              }
               currentAssignment {
                 jobTitle
                 internationalJobTitle

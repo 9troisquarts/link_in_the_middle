@@ -1,3 +1,6 @@
+## [0.14.0] - 2025-03-11
+- Add Bonus updators to employees
+
 ## [0.13.0] - 2025-01-30
 - Add training stewards to users
 
