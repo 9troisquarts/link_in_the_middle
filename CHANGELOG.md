@@ -1,3 +1,6 @@
+## [0.15.0] - 2025-04-03
+- Add evaluation (banding and sub bandings) to employee type
+
 ## [0.14.0] - 2025-03-11
 - Add Bonus updators to employees
 

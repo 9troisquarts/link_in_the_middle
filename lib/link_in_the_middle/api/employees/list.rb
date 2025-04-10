@@ -23,6 +23,10 @@ module LinkInTheMiddle
                 fullname
                 email
               }
+              evaluation {
+                banding
+                subBanding
+              }
               currentAssignment {
                 jobTitle
                 internationalJobTitle
