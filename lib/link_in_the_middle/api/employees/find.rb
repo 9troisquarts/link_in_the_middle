@@ -40,9 +40,11 @@ module LinkInTheMiddle
                 internationalStatus
                 leadershipTeam
                 jobFamily {
+                  id
                   title
                 }
                 subJobFamily {
+                  id
                   title
                 }
                 contractLegalEntity {
@@ -57,9 +59,11 @@ module LinkInTheMiddle
                 }
                 businessUnit {
                   id
+                  id
                   title
                 }
                 contractType {
+                  id
                   title
                 }
                 manager {

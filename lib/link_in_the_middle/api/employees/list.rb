@@ -11,10 +11,14 @@ module LinkInTheMiddle
               uniqueEmployeeId
               firstname
               lastname
+              isManager
+              isHrOrg
               email
               nationalityIso
               arrivalOn
               url
+              gender
+              birthdate
               cbBonusUsers {
                 fullname
                 email
@@ -35,30 +39,44 @@ module LinkInTheMiddle
                 internationalStatus
                 leadershipTeam
                 jobFamily {
+                  id
                   title
                 }
                 subJobFamily {
+                  id
                   title
                 }
                 contractLegalEntity {
+                  id
                   title
                   countryIso
                 }
                 workingPlaceLegalEntity {
+                  id
                   title
                   countryIso
                 }
                 businessUnit {
+                  id
                   title
                 }
                 contractType {
+                  id
                   title
                 }
                 manager {
+                  id
+                  uniqueEmployeeId
+                  firstname
+                  lastname
                   fullname
                   email
                 }
                 hrOrg {
+                  id
+                  uniqueEmployeeId
+                  firstname
+                  lastname
                   fullname
                   email
                   currentAssignment {
@@ -68,6 +86,10 @@ module LinkInTheMiddle
                   }
                 }
                 upperManager {
+                  id
+                  uniqueEmployeeId
+                  firstname
+                  lastname
                   fullname
                   email
                 }

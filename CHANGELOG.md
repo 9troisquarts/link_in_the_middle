@@ -1,3 +1,6 @@
+## [0.16.0] - 2025-05-06
+- Add fields to employees list and find
+
 ## [0.15.0] - 2025-04-03
 - Add evaluation (banding and sub bandings) to employee type
 
