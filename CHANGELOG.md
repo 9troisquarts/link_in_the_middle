@@ -1,3 +1,6 @@
+## [0.17.0] - 2025-05-23
+- Adapt registrations queries and mutations for TIPI app
+
 ## [0.16.0] - 2025-05-06
 - Add fields to employees list and find
 

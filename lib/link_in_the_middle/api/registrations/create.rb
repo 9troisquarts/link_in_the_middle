@@ -10,6 +10,8 @@ module LinkInTheMiddle
             registration {
               id
               ctrRegistrationId
+              tipiTrainingId
+              tipiRequestId
               employeeId
               training
               trainingSession

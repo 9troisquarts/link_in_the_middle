@@ -10,6 +10,8 @@ module LinkInTheMiddle
             registration {
               id
               ctrRegistrationId
+              tipiTrainingId
+              tipiRequestId
               employeeId
               training
               trainingSession
@@ -23,12 +25,13 @@ module LinkInTheMiddle
       GRAPHQL
 
       class Delete
-        def self.call(record_id: nil)
+        def self.call(ctr_registration_id: nil, tipi_request_id: nil)
           result = LinkInTheMiddle::Client.query(
             LinkInTheMiddle::Api::Registrations::DELETE_REGISTRATION_QUERY,
             variables: {
               input: {
-                id: record_id,
+                ctrRegistrationId: ctr_registration_id,
+                tipiRequestId: tipi_request_id,
               }
             }
           )

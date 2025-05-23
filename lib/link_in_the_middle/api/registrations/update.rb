@@ -10,6 +10,8 @@ module LinkInTheMiddle
             registration {
               id
               ctrRegistrationId
+              tipiTrainingId
+              tipiRequestId
               employeeId
               training
               trainingSession
@@ -23,12 +25,13 @@ module LinkInTheMiddle
       GRAPHQL
 
       class Update
-        def self.call(record_id: nil, attributes: {})
+        def self.call(ctr_registration_id: nil, tipi_request_id: nil, attributes: {})
           result = LinkInTheMiddle::Client.query(
             LinkInTheMiddle::Api::Registrations::UPDATE_REGISTRATION_QUERY,
             variables: {
               input: {
-                id: record_id,
+                ctrRegistrationId: ctr_registration_id,
+                tipiRequestId: tipi_request_id,
                 attributes: attributes && attributes.deep_transform_keys! { |key| key.to_s.camelize(:lower) },
               }
             }

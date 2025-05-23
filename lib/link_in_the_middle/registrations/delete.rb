@@ -3,9 +3,10 @@ require 'link_in_the_middle/api/registrations/delete'
 module LinkInTheMiddle
   module Registrations
     class Delete
-      def self.perform(record_id: nil)
+      def self.perform(ctr_registration_id: nil, tipi_request_id: nil)
         result = LinkInTheMiddle::Api::Registrations::Delete.call(
-          record_id: record_id,
+          ctr_registration_id: ctr_registration_id,
+          tipi_request_id: tipi_request_id,
         )
         result
       end
