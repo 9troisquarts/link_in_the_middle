@@ -12,11 +12,11 @@ gem 'link_in_the_middle'
 
 And then execute:
 
-    $ bundle install
+  $ bundle install
 
 Or install it yourself as:
 
-    $ gem install link_in_the_middle
+  $ gem install link_in_the_middle
 
 ## Usage
 ### Get become user secret token
@@ -24,7 +24,7 @@ Or install it yourself as:
 require 'link_in_the_middle/users/become'
 
 data = LinkInTheMiddle::Users::Become.perform(
-    email: "email@mail.com"
+  email: "email@mail.com"
 )
 => "9e2b20fe-8c42-4f26-aac5-75275dcb8615"
 ```
@@ -35,7 +35,7 @@ data = LinkInTheMiddle::Users::Become.perform(
 require 'link_in_the_middle/legal_entities/search'
 
 LinkInTheMiddle::LegalEntities::Search.perform(
-    search: "lesaffre int"
+  search: "lesaffre int"
 )
 => {:records=>[#< id="3" title="Lesaffre International">, #< id="14" title="Lesaffre International Corporation">]}
 ```
@@ -45,7 +45,7 @@ LinkInTheMiddle::LegalEntities::Search.perform(
 require 'link_in_the_middle/business_units/search'
 
 LinkInTheMiddle::BusinessUnits::Search.perform(
-    search: "agrauxine"
+  search: "agrauxine"
 )
 => {:records=>[#< id="1" title="Agrauxine">]}
 ```
@@ -55,7 +55,7 @@ LinkInTheMiddle::BusinessUnits::Search.perform(
 require 'link_in_the_middle/job_families/search'
 
 LinkInTheMiddle::JobFamilies::Search.perform(
-    search: "communication"
+  search: "communication"
 )
 => {:records=>[#< id="1" title="Communication" subJobFamilies=...>]}
 ```
@@ -65,8 +65,8 @@ LinkInTheMiddle::JobFamilies::Search.perform(
 require 'link_in_the_middle/sub_job_families/search'
 
 LinkInTheMiddle::SubJobFamilies::Search.perform(
-    search: "accounting",
-    job_family_id: 1
+  search: "accounting",
+  job_family_id: 1
 )
 => {:records=>[#< id="1" title="Accounting" jobFamily=...>]}
 ```
@@ -84,7 +84,17 @@ LinkInTheMiddle::PesoBandings::List.perform
 require 'link_in_the_middle/training_topics/search'
 
 LinkInTheMiddle::TrainingTopics::Search.perform(
-    search: "example"
+  search: "example"
+)
+=> {:records=>[#< id="1" title="example">]}
+```
+
+### Get list of Training Sub Topics:
+```ruby
+require 'link_in_the_middle/training_sub_topics/search'
+
+LinkInTheMiddle::TrainingSubTopics::Search.perform(
+  search: "example"
 )
 => {:records=>[#< id="1" title="example">]}
 ```
@@ -94,12 +104,13 @@ LinkInTheMiddle::TrainingTopics::Search.perform(
 require 'link_in_the_middle/employees/find'
 
 LinkInTheMiddle::Employees::Find.perform(
-    search_params: {
-        email: "email@mail.com"
-    }
+  search_params: {
+    email: "email@mail.com"
+  }
 )
 => {:record=>#< id="13" uniqueEmployeeId="L000133" firstname="Neuf" lastname="Troisquarts" isManager=true isHrOrg=true email="email@mail.com">}
 ```
+
 ## Configuration
 
 Configure link graphql api endpoint and auth token
@@ -112,6 +123,7 @@ LinkInTheMiddle.configure do |config|
   config.update_schema_on_each_request = false # trigger GraphQL::Client.dump_schema for each request
 end
 ```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

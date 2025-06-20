@@ -1,3 +1,6 @@
+## [0.18.0] - 2025-01-27
+- Add api for training sub topics
+
 ## [0.17.0] - 2025-05-23
 - Adapt registrations queries and mutations for TIPI app
 
