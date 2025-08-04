@@ -8,7 +8,7 @@ module LinkInTheMiddle
           trainingTopics(search: $search) {
             id
             title
-            subTopics {
+            trainingSubTopics {
               id
               title
             }
