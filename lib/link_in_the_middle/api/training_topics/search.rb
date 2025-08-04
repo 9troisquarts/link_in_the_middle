@@ -8,6 +8,10 @@ module LinkInTheMiddle
           trainingTopics(search: $search) {
             id
             title
+            subTopics {
+              id
+              title
+            }
           }
         }
       GRAPHQL

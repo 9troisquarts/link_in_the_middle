@@ -1,3 +1,6 @@
+## [0.19.0] - 2025-01-27
+- Topics & sub_topics relation
+
 ## [0.18.0] - 2025-01-27
 - Add api for training sub topics
 

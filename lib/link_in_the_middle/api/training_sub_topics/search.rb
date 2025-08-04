@@ -4,20 +4,25 @@ module LinkInTheMiddle
   module Api
     module TrainingSubTopics
       TRAINING_SUB_TOPICS_QUERY = LinkInTheMiddle::Client.parse <<-'GRAPHQL'
-        query($search: String) {
-          trainingSubTopics(search: $search) {
+        query($search: String, $trainingTopicId: Int) {
+          trainingSubTopics(search: $search, trainingTopicId: $trainingTopicId) {
             id
             title
+            trainingTopic {
+              id
+              title
+            }
           }
         }
       GRAPHQL
 
       class Search
-        def self.call(search: nil)
+        def self.call(search: nil, training_topic_id: nil)
           result = LinkInTheMiddle::Client.query(
             LinkInTheMiddle::Api::TrainingSubTopics::TRAINING_SUB_TOPICS_QUERY,
             variables: {
               search: search,
+              training_topic_id: training_topic_id
             }
           )
           {
